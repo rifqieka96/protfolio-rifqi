@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
     <title>Rifqi Eka Satria</title>
     <link href="dist/output.css" rel="stylesheet">
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+        } else {
+        document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
 <body>
     <!-- Header Start -->
@@ -23,24 +30,35 @@
                         <span class="hamburger-line transition duration-300 ease-in-out"></span>
                         <span class="hamburger-line origin-bottom-left transition duration-300 ease-in-out"></span>
                     </button>
-                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none">
+                    <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-dark dark:shadow-slate-800 lg:dark:bg-transparent">
                         <ul class="block lg:flex">
                             <li class="group">
-                                <a href="#home" class="text-base text-dark py-2 mx-8 flex  group-hover:text-primary">Beranda</a>
+                                <a href="#home" class="text-base text-dark py-2 mx-8 flex  group-hover:text-primary dark:text-white">Beranda</a>
                             </li>
                             <li class="group">
-                                <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Tentang Saya</a>
+                                <a href="#about" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Tentang Saya</a>
                             </li>
                             <li class="group">
-                                <a href="#portfolio" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Portfolio</a>
+                                <a href="#portfolio" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Portfolio</a>
                             </li>
                             <li class="group">
-                                <a href="#clients" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Clients</a>
+                                <a href="#clients" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Clients</a>
                             </li>
                             <li class="group">
-                                <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
+                                <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Contact</a>
                             </li>
-                           
+                            <li class="flex mt-3 items-center pl-8">
+                                <div class="flex">
+                                    <span class="mr-2 text-sm text-slate-500">light</span>
+                                    <input type="checkbox" class="hidden" id="dark-toggel">
+                                    <label for="dark-toggel">
+                                        <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
+                                            <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
+                                        </div>
+                                    </label>
+                                    <span class="ml-2 text-sm text-slate-500">dark</span>
+                                </div>
+                            </li>
                         </ul>
                     </nav>  
                 </div>
@@ -48,21 +66,22 @@
         </div>
     </header>
     <!-- End Header -->
+
     <!-- Hero Section Start -->
-    <section id="home" class="pt-36">
+    <section id="home" class="pt-36 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full self-center px-4 lg:w-1/2">
-                    <h1 class="text-base font-semibold text-primary md:text-lg">Hallo Semua 👋 Saya <span class="block font-bold text-dark text-4xl mt-1">Rifqi Eka Satria</span></h1>
-                    <h2 class="font-medium text-slate-700 text-lg mb-5 lg:text-2xl"><span class=" text-dark">Web Developer </span> & <span class=" text-dark">IT Staf</span></h2>
-                    <p class="font-medium text-secondary mb-10 leading-relaxed">Web Programing Itu Menyenangkan dan Mengasikan Bukan. <span class=" text-dark font-bold">Bukan!</span></p>
+                    <h1 class="text-base font-semibold text-primary md:text-lg">Hallo Semua 👋 Saya <span class="block font-bold text-dark text-4xl mt-1 dark:text-white">Rifqi Eka Satria</span></h1>
+                    <h2 class="font-medium text-slate-700 text-lg mb-5 lg:text-2xl"><span class=" text-dark dark:text-white">Web Developer </span> & <span class=" text-dark dark:text-white">IT Staf</span></h2>
+                    <p class="font-medium text-secondary mb-10 leading-relaxed">Web Programing Itu Menyenangkan dan Mengasikan Bukan. <span class=" text-dark font-bold dark:text-white">Bukan!</span></p>
                     <a href="https://wa.me/+6281322488963?text=Hallo%20Apakah%20Benar%20dengan%20bp%20Rifqi%20Eka%20Satria" target="blank" class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-tr-3xl rounded-tl-sm rounded-br-sm rounded-bl-3xl hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Hubungi Saya</a>
                 </div>
                 <div class="w-full self-end px-4 lg:w-1/2">
                     <div class="relative mt-10 lg:mt-9 lg:right-0">
-                        <img src="dist/img/rifqi.png" alt="Rifqi Eka Satria" class="max-w-full mx-auto" />
-                        <span class="absolute bottom-0 -z-10 left-1/2 -translate-x-1/2 md:scale-125">
-                            <svg width="400" height="750" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <img src="dist/img/rifqi.png" alt="Rifqi Eka Satria" class="relative z-10 max-w-full mx-auto" />
+                        <span class="absolute bottom-0 left-1/2 -translate-x-1/2 md:scale-125">
+                            <svg width="400" height="600" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                                 <path fill="#4338ca" d="M47.1,-59C59.9,-45.5,68.1,-29.5,72.3,-11.9C76.4,5.7,76.4,24.9,69,41.8C61.6,58.6,46.7,73.1,28.9,79.7C11.1,86.4,-9.7,85.1,-28.6,78.3C-47.4,71.5,-64.3,59.2,-71.3,43.1C-78.4,27,-75.6,7.1,-68.8,-8.8C-62,-24.6,-51.2,-36.4,-39.1,-50C-27,-63.6,-13.5,-79,1.9,-81.2C17.2,-83.5,34.4,-72.5,47.1,-59Z" transform="translate(100 100)" />
                               </svg>
                         </span>
@@ -74,16 +93,16 @@
     <!-- Hero Section End -->
 
     <!-- Aboute Section -->
-    <section id="about" class="pt-36 pb-32 bg-slate-100">
+    <section id="about" class="pt-36 pb-32 bg-slate-100 dark:bg-dark">
         <div class="container">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/2">
                     <h4 class="uppercase font-bold text-primary  text-lg mb-3">Tentang Saya</h4>
-                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-3xl"><span class="text-dark"><p>Sudah Saatnya untuk Mengembangkan aplikasi web</p></h2>
+                    <h2 class="font-bold text-dark text-3xl mb-5 max-w-md lg:text-3xl"><span class="text-dark dark:text-white"><p>Sudah Saatnya untuk Mengembangkan aplikasi web</p></h2>
                     <p class="font-medium text-secondary text-base max-w-xl text-justify lg:text-lg">Aplikasi berbasis web mulai populer seiring dengan jumlah pengguna internet aktif di seluruh dunia. Selain mudah untuk diakses perangkat website juga tidak membutuhkan sumber daya yang besar dari sisi perangkat keras atau lunak. Dari setiap kalanganpun dapat menggunakan sebuah aplikasi website.</p>
                 </div>
                 <div class="w-full px-4 lg:w-1/2">
-                    <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10">Follow Me</h3>                    
+                    <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-3xl lg:pt-10 dark:text-white">Follow Me</h3>                    
                     <p class="font-medium text-secondary text-justify text-base max-w-xl mb-6 lg:text-lg">Ikuti sosial media saya untuk mengetahui perkembangan dunia web programing lebih lanjut, untuk pembuatan website dll silahkan langsung kontak ke nomor whatsapp dibawah.</p>
                     <div class="flex items-center">
                         <!-- intagram -->
@@ -106,11 +125,11 @@
     <!-- End About Section -->
 
     <!-- Portfolio Section Start -->
-    <section id="portfolio" class="pt-36 pb-16">
+    <section id="portfolio" class="pt-36 pb-16 dark:bg-slate-800">
         <div class="w-full px-4">
             <div class="max-w-xl mx-auto text-center mb-16">
                 <h4 class="uppercase font-semibold text-primary text-lg mb-2">Portfolio</h4> 
-                <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Project Terbaru</h2>
+                <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Project Terbaru</h2>
                 <p class="font-medium text-md text-secondary md:text-lg">Berikut adalah Project beberapa Project terbaru yang pernah saya buat sebelumnya </p>
             </div>
         </div>
@@ -120,28 +139,28 @@
                 <div class="rounded-md shadow-md overflow-hidden">
                     <img src="dist/img/portfolio/web1.PNG" alt="web1" width="w-full">
                 </div>
-                <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Sistem Informasi Akademik FKUnjani</h3>
+                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Sistem Informasi Akademik FKUnjani</h3>
                 <p class="font-medium text-base text-secondary text-justify">Sistem Informasi Akademik FKUnjani adalah sebuah aplikasi berbasis web yang diperuntukan untuk mengelola kegiatan akademik yang ada di fakultas kedokteran unjani.</p>
             </div>
             <div class="mb-12 p-4 md:w-1/2">
                 <div class="rounded-md shadow-md overflow-hidden">
                     <img src="dist/img/portfolio/web2.PNG" alt="web1" width="w-full">
                 </div>
-                <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Online Formative Assesment FKUnjani</h3>
+                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Online Formative Assesment FKUnjani</h3>
                 <p class="font-medium text-base text-secondary text-justify">Sistem Informasi yang digunakan oleh dosen untuk memberikan nilai harian kepada mahasiswa.</p>
             </div>
             <div class="mb-12 p-4 md:w-1/2">
                 <div class="rounded-md shadow-md overflow-hidden">
                     <img src="dist/img/portfolio/web3.PNG" alt="web1" width="w-full">
                 </div>
-                <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Pusat Riset Dan Publikasi FKUnjani</h3>
+                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Pusat Riset Dan Publikasi FKUnjani</h3>
                 <p class="font-medium text-base text-secondary text-justify">Sistem Informasi yang digunakan oleh dosen untuk melakukan submit penelitian atau pengabdian masyarakat dan bisa juga digunakan oleh mahasiswa untuk submit data plagiarisme.</p>
             </div>
             <div class="mb-12 p-4 md:w-1/2">
                 <div class="rounded-md shadow-md overflow-hidden">
                     <img src="dist/img/portfolio/web4.PNG" alt="web1" width="w-full">
                 </div>
-                <h3 class="font-semibold text-xl text-dark mt-5 mb-3">Penilaian Coas P3D FKUnjani</h3>
+                <h3 class="font-semibold text-xl text-dark mt-5 mb-3 dark:text-white">Penilaian Coas P3D FKUnjani</h3>
                 <p class="font-medium text-base text-secondary text-justify">Sistem Informasi yang digunakan oleh departement di prodi profesi untuk memberikan nilai terhadap mahasiswa/co-ass.</p>
             </div>
         </div>
@@ -149,12 +168,12 @@
     <!-- End Portfolio -->
 
     <!-- Client Start -->
-    <section id="clients" class="pt-36 pb-32 bg-slate-700">
+    <section id="clients" class="pt-36 pb-32 bg-slate-700 dark:bg-slate-300">
          <div class="container">
              <div class="w-full px-4">
                 <div class="mx-auto text-center mb-16">
-                    <h4 class="uppercase font-semibold text-teal-500 text-lg mb-2">Clients</h4> 
-                    <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl">Yang Pernah Bekerjasama</h2>
+                    <h4 class="uppercase font-semibold text-teal-500 text-lg mb-2 dark:text-primary">Clients</h4> 
+                    <h2 class="font-bold text-white text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-dark">Yang Pernah Bekerjasama</h2>
                     <p class="font-medium text-md text-secondary md:text-lg">Perusahaan atau Intansi Yang Pernah Bekerjasama.</p>
                 </div>
              </div>
@@ -176,30 +195,30 @@
     <!-- End Client -->
 
     <!-- Contact Start -->
-    <section id="contact" class="pt-36 pb-32">
+    <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
         <div class="container">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-16">
-                    <h4 class="uppercase font-semibold text-primary text-lg mb-2">Contact</h4> 
-                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Hubungi Kami</h2>
+                    <h4 class="uppercase font-semibold text-primary text-lg mb-2 dark:text-teal-400">Contact</h4> 
+                    <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Hubungi Kami</h2>
                     <p class="font-medium text-md text-secondary md:text-lg">Jika Ada Pertanyaan Silahkan tinggalkan Pesan.</p>
                 </div>
                 <form action="">
                 <div class="w-full lg:w-2/3 lg:mx-auto">
                     <div class="w-full px-4 mb-8">
-                    <label for="name" class="text-base font-bold text-primary">Nama</label>
+                    <label for="name" class="text-base font-bold text-primary dark:text-teal-400">Nama</label>
                     <input type="text" id="name" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
                     </div>
                     <div class="w-full px-4 mb-8">
-                    <label for="email" class="text-base font-bold text-primary">Email</label>
+                    <label for="email" class="text-base font-bold text-primary dark:text-teal-400">Email</label>
                     <input type="email" id="email" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
                 </div>
                 <div class="w-full px-4 mb-8">
-                    <label for="pesan" class="text-base font-bold text-primary">Pesan</label>
+                    <label for="pesan" class="text-base font-bold text-primary dark:text-teal-400">Pesan</label>
                     <textarea type="text" id="name" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary h-52"></textarea>
                 </div>
                 <div class="w-ful">
-                    <button class="text-base font-semibold text-white bg-primary py-3 px-8 rounded-tr-3xl rounded-tl-sm rounded-br-sm rounded-bl-3xl hover:shadow-lg hover:opacity-80 transition duration-500 ease-in-out w-full">Kirim</button>
+                    <button class="text-base font-semibold text-white bg-primary dark:bg-teal-400 py-3 px-8 rounded-tr-3xl rounded-tl-sm rounded-br-sm rounded-bl-3xl hover:shadow-lg hover:opacity-80 transition duration-500 ease-in-out w-full">Kirim</button>
                 </div>
             </form>
             </div>
@@ -260,6 +279,10 @@
         </div>
     </footer>
     <!-- end footer -->
+
+    <a href="#home" id="to-top" class="hidden items-center justify-center h-14 w-14 bg-primary rounded-full fixed z-[9999] bottom-4 right-4 p-4 hover:animate-pulse">
+        <span class="block w-5 h-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
+    </a>
 <script src="dist/js/script.js">
 
 </script>
